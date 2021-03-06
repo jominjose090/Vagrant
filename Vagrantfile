@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
   config.vm.define "web" do |web|
-    web.vm.box = "precise64"
+    web.vm.box = "centos/7"
     web.vm.hostname = 'web'
-    web.vm.box_url = "ubuntu/trusty64"
+    #web.vm.box_url = "centos/7"
 
     web.vm.network :private_network, ip: "10.9.8.10"
     #web.vm.network :forwarded_port, guest: 22, host: 10122, id: "ssh" ## uncomment if ssh access issue in port forwarding
@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "db" do |db|
-    db.vm.box = "precise64"
+    db.vm.box = "centos/7"
     db.vm.hostname = 'db'
-    db.vm.box_url = "ubuntu/precise64"
+    #db.vm.box_url = "centos/7"
 
     db.vm.network :private_network, ip: "10.9.8.11"
     #db.vm.network :forwarded_port, guest: 22, host: 10222, id: "ssh" ## uncomment if ssh access issue in port forwarding
